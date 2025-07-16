@@ -12,6 +12,12 @@ import { RouterModule } from '@angular/router';
                         loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
                         data: { permission: 'Pages.Tenant.Dashboard' },
                     },
+                    {
+                        path: 'phonebook',
+                        loadChildren: () => import('./phonebook/phonebook.module').then(m => m.PhoneBookModule),
+                        data: { permission: 'Pages.Tenant.PhoneBook' }
+                    },
+
                     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
                     { path: '**', redirectTo: 'dashboard' },
                 ],
@@ -20,4 +26,4 @@ import { RouterModule } from '@angular/router';
     ],
     exports: [RouterModule],
 })
-export class MainRoutingModule {}
+export class MainRoutingModule { }

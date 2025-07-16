@@ -39,6 +39,8 @@ using MyTraining1101Demo.MultiTenancy.Payments;
 using MyTraining1101Demo.MultiTenancy.Payments.Dto;
 using MyTraining1101Demo.Notifications.Dto;
 using MyTraining1101Demo.Organizations.Dto;
+using MyTraining1101Demo.People;
+using MyTraining1101Demo.peopleinit.DTO;
 using MyTraining1101Demo.Sessions.Dto;
 using MyTraining1101Demo.WebHooks.Dto;
 
@@ -164,6 +166,17 @@ namespace MyTraining1101Demo
             configuration.CreateMap<CreateUserDelegationDto, UserDelegation>();
 
             /* ADD YOUR OWN CUSTOM AUTOMAPPER MAPPINGS HERE */
+
+
+            configuration.CreateMap<Person, PersonListDto>();
+            configuration.CreateMap<CreatePersonInput, Person>();
+            configuration.CreateMap<Phone, PhoneInPersonListDto>();
+            configuration.CreateMap<AddPhoneInput, Phone>();
+            configuration.CreateMap<Person, GetPersonForEditOutput>();
+
+
+
+
         }
     }
 }

@@ -10,6 +10,7 @@ using MyTraining1101Demo.Friendships;
 using MyTraining1101Demo.MultiTenancy;
 using MyTraining1101Demo.MultiTenancy.Accounting;
 using MyTraining1101Demo.MultiTenancy.Payments;
+using MyTraining1101Demo.People;
 using MyTraining1101Demo.Storage;
 
 namespace MyTraining1101Demo.EntityFrameworkCore
@@ -17,6 +18,10 @@ namespace MyTraining1101Demo.EntityFrameworkCore
     public class MyTraining1101DemoDbContext : AbpZeroDbContext<Tenant, Role, User, MyTraining1101DemoDbContext>, IAbpPersistedGrantDbContext
     {
         /* Define an IDbSet for each entity of the application */
+
+        public virtual DbSet<Person> Persons { get; set; }
+
+        public virtual DbSet<Phone> Phones { get; set; }
 
         public virtual DbSet<BinaryObject> BinaryObjects { get; set; }
 
